@@ -6,8 +6,8 @@ This runbook provides a structured procedure for investigating suspicious or une
 
 It uses the Project 5 architecture as its reference environment:
 
-- Source account: Identity Delegated Admin (`802429853711`)
-- Target account: Cloud Security Lab (`875691018505`)
+- Source account: Identity Delegated Admin (account ID redacted)
+- Target account: Cloud Security Lab (account ID redacted)
 - Target role: `HTI-P5-CrossAccount-TargetRole`
 
 The primary investigation source is AWS CloudTrail.
@@ -93,13 +93,13 @@ Not every field will be present in every CloudTrail event. Interpret fields in t
 
 Compare the event details with the expected Project 5 access design.
 
-Expected source account:
-
-`802429853711`
+Expected source account: Identity Delegated Admin (numeric account ID redacted).
 
 Expected target role:
 
-`arn:aws:iam::875691018505:role/HTI-P5-CrossAccount-TargetRole`
+`arn:aws:iam::<TARGET_ACCOUNT_ID>:role/HTI-P5-CrossAccount-TargetRole`
+
+The account-ID placeholder is for documentation only. Use the actual account ID when investigating live CloudTrail records.
 
 Check whether the initiating principal and session information are consistent with the authorized Identity Center user and expected access workflow.
 
