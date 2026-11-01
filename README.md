@@ -170,9 +170,9 @@ This demonstrates separation of provisioning privileges from ongoing operational
 
 ### Observed limitation
 
-The target role could not perform the `access-analyzer:ListPolicyGenerations` console operation because that action was not permitted by its identity-based permissions.
+During testing, the target role received an `AccessDenied` response for the `access-analyzer:ListPolicyGenerations` operation.
 
-This was an expected limitation of the restricted access design, not a failure of cross-account role assumption.
+This permission limitation was observed during the lab and remained unresolved. It did not prevent the successful cross-account role-assumption workflow.
 
 ### Scope limitation
 
