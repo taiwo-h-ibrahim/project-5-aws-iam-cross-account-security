@@ -15,7 +15,7 @@ The provisioning permission set was assigned to the `hti-lab-admin` user in the 
 | Permission set | `HTI-P5-Provisioning` |
 | Identity Center user | `hti-lab-admin` |
 | Target account | Cloud Security Lab |
-| Target account ID | `875691018505` |
+| Target account ID | Redacted in public copy |
 | Session duration | 1 hour |
 | Purpose | Configure the Project 5 target IAM role |
 
