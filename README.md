@@ -89,6 +89,12 @@ The access process follows this sequence:
 - The attached permissions policy defines the actions available to the assumed role.
 - The permissions boundary limits the maximum permissions that can be granted to that role.
 
+### Architecture diagram
+
+![Project 5 AWS IAM cross-account architecture](architecture/project-5-aws-iam-cross-account-architecture-final.png)
+
+[View the scalable SVG version](architecture/project-5-aws-iam-cross-account-architecture-final.svg).
+
 ## 6. Implementation
 
 ### 6.1 IAM Identity Center
@@ -199,7 +205,7 @@ Project documentation and supporting evidence are organized into:
 
 - `architecture/` — architecture diagrams and design explanation.
 - `iam/` — relevant IAM policy documents and configuration notes.
-- `evidence/` — redacted screenshots and implementation evidence.
+- `evidence/` — evidence-handling guidance and register; redacted screenshots are pending upload.
 - `testing/` — test plan and validation results.
 - `findings/` — security review and observations.
 - `docs/` — operational runbook and supporting documentation.
