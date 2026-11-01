@@ -12,9 +12,9 @@ It resides in the Cloud Security Lab account and allows the designated source AW
 |---|---|
 | Role name | `HTI-P5-CrossAccount-TargetRole` |
 | Target account | Cloud Security Lab |
-| Target account ID | `875691018505` |
-| Source account ID | `802429853711` |
-| Trusted principal | `arn:aws:iam::802429853711:root` |
+| Target account ID | Redacted in public copy |
+| Source account ID | Redacted in public copy |
+| Trusted principal | Source account root principal (account ID redacted) |
 | Allowed action | `sts:AssumeRole` |
 | Attached permissions policy | AWS-managed `SecurityAudit` |
 | Permissions boundary | AWS-managed `SecurityAudit` |
@@ -22,7 +22,7 @@ It resides in the Cloud Security Lab account and allows the designated source AW
 
 ## 3. Trust Policy
 
-The target role uses the following trust policy:
+The following is a redacted illustrative version of the target role trust policy. Replace `<SOURCE_ACCOUNT_ID>` with the actual source account ID before using an equivalent policy in AWS; this public example is not directly deployable as written.
 
 ```json
 {
@@ -31,7 +31,7 @@ The target role uses the following trust policy:
     {
       "Effect": "Allow",
       "Principal": {
-        "AWS": "arn:aws:iam::802429853711:root"
+        "AWS": "arn:aws:iam::<SOURCE_ACCOUNT_ID>:root"
       },
       "Action": "sts:AssumeRole"
     }
@@ -41,7 +41,7 @@ The target role uses the following trust policy:
 
 ### Trust Policy Analysis
 
-- **Principal:** The source AWS account, `802429853711`.
+- **Principal:** The source AWS account (account ID redacted).
 - **Action:** `sts:AssumeRole`.
 - **Effect:** `Allow`.
 
