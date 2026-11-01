@@ -8,10 +8,12 @@ The design applies least-privilege principles by separating the permissions requ
 
 ## AWS Accounts
 
-| Account | Account ID | Purpose |
-|---|---|---|
-| Identity Delegated Admin | `802429853711` | Source account used to initiate cross-account access |
-| Cloud Security Lab | `875691018505` | Target account containing the protected IAM role |
+| Account | Purpose |
+|---|---|
+| Identity Delegated Admin | Source account used to initiate cross-account access |
+| Cloud Security Lab | Target account containing the protected IAM role |
+
+Numeric AWS account identifiers are intentionally redacted from this public repository.
 
 The AWS IAM Identity Center administration is managed through a separate management account.
 
