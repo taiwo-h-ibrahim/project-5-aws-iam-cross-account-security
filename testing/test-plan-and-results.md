@@ -19,9 +19,9 @@ Testing focused on:
 |---|---|
 | Identity Center user | `hti-lab-admin` |
 | Source account | Identity Delegated Admin |
-| Source account ID | `802429853711` |
+| Source account ID | Redacted in public copy |
 | Target account | Cloud Security Lab |
-| Target account ID | `875691018505` |
+| Target account ID | Redacted in public copy |
 | Source permission set | `HTI-P5-Source-Access` |
 | Target IAM role | `HTI-P5-CrossAccount-TargetRole` |
 | Target permissions policy | AWS-managed `SecurityAudit` |
