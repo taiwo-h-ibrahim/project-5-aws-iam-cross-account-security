@@ -205,7 +205,7 @@ Project documentation and supporting evidence are organized into:
 
 - `architecture/` — architecture diagrams and design explanation.
 - `iam/` — relevant IAM policy documents and configuration notes.
-- `evidence/` — evidence-handling guidance and register; redacted screenshots are pending upload.
+- `evidence/` — seven redacted screenshots, evidence-handling guidance and the evidence register.
 - `testing/` — test plan and validation results.
 - `findings/` — security review and observations.
 - `docs/` — operational runbook and supporting documentation.
