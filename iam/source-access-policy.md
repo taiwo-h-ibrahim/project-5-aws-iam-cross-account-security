@@ -13,15 +13,15 @@ Its purpose is to enforce least privilege by allowing the user to request access
 | Permission set | `HTI-P5-Source-Access` |
 | Identity Center user | `hti-lab-admin` |
 | Source account | Identity Delegated Admin |
-| Source account ID | `802429853711` |
+| Source account ID | Redacted in public copy |
 | Target account | Cloud Security Lab |
-| Target account ID | `875691018505` |
+| Target account ID | Redacted in public copy |
 | Session duration | 1 hour |
 | Allowed action | `sts:AssumeRole` |
 
 ## 3. Inline Policy
 
-The following inline policy was configured in the permission set:
+The following is a redacted illustrative version of the inline policy configured in the permission set. Replace `<TARGET_ACCOUNT_ID>` with the actual target account ID before using an equivalent policy in AWS; this public example is not directly deployable as written.
 
 ```json
 {
@@ -31,7 +31,7 @@ The following inline policy was configured in the permission set:
       "Sid": "AssumeOnlyProject5TargetRole",
       "Effect": "Allow",
       "Action": "sts:AssumeRole",
-      "Resource": "arn:aws:iam::875691018505:role/HTI-P5-CrossAccount-TargetRole"
+      "Resource": "arn:aws:iam::<TARGET_ACCOUNT_ID>:role/HTI-P5-CrossAccount-TargetRole"
     }
   ]
 }
