@@ -30,7 +30,7 @@ The AWS IAM Identity Center administration is managed through a separate managem
 - **Restricted source permissions:** The source permission set allows assumption of the designated target role rather than unrestricted IAM administration.
 - **Cross-account trust:** The target role trusts the source AWS account.
 - **Role-based access:** Access to the target account is provided through a dedicated IAM role.
-- **Read-only permissions:** The target role uses the AWS-managed `SecurityAudit` policy.
+- **Audit-oriented permissions:** The target role uses the AWS-managed `SecurityAudit` policy. Its effective permissions are also subject to the configured permissions boundary.
 - **Permissions boundary:** The target role has a `SecurityAudit` permissions boundary to limit its maximum permissions.
 - **Temporary credentials:** Role assumption uses AWS STS temporary credentials, with a maximum session duration of one hour.
 - **Provisioning separation:** The temporary provisioning permission-set assignment was withdrawn after the target role was configured.
