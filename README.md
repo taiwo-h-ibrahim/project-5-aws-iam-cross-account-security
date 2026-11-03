@@ -50,7 +50,7 @@ The implementation uses three account responsibilities:
 
 | Account | Responsibility |
 |---|---|
-| Management account — `ibrahimabeeb-Team` | IAM Identity Center administration |
+| Management account | IAM Identity Center administration |
 | Identity Delegated Admin | Source account |
 | Cloud Security Lab | Target account |
 
