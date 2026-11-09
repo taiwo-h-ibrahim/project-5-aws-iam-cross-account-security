@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#ffffff"/>
+<style>
+.title{font:700 34px Arial,sans-serif;fill:#193750}
+.sub{font:19px Arial,sans-serif;fill:#50606e}
+.h{font:700 23px Arial,sans-serif;fill:#233241}
+.b{font:16px Arial,sans-serif;fill:#596774}
+.small{font:15px Arial,sans-serif;fill:#596774}
+.box{stroke:#8096a8;stroke-width:2;rx:22}
+.arrow{stroke:#5a6978;stroke-width:4;fill:none;marker-end:url(#arr)}
+</style>
+<defs><marker id="arr" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#5a6978"/></marker></defs>
+<text x="80" y="78" class="title">Project 5 — External Google OIDC Federation</text>
+<text x="82" y="112" class="sub">Dedicated external identity → temporary AWS access → scoped S3 authorization → CloudTrail</text>
+<rect x="90" y="220" width="290" height="250" fill="#f2f8fc" class="box"/>
+<text x="235" y="275" text-anchor="middle" class="h">External Google</text><text x="235" y="305" text-anchor="middle" class="h">Identity</text>
+<text x="235" y="350" text-anchor="middle" class="b">Google OAuth / OIDC</text><text x="235" y="380" text-anchor="middle" class="b">Identity token</text>
+<text x="235" y="410" text-anchor="middle" class="b">Audience + subject</text><text x="235" y="438" text-anchor="middle" class="b">validated by AWS</text>
+<rect x="500" y="220" width="290" height="250" fill="#eff8f3" class="box"/>
+<text x="645" y="275" text-anchor="middle" class="h">AWS OIDC</text><text x="645" y="305" text-anchor="middle" class="h">Provider</text>
+<text x="645" y="350" text-anchor="middle" class="b">accounts.google.com</text><text x="645" y="385" text-anchor="middle" class="b">Token presented to</text><text x="645" y="415" text-anchor="middle" class="b">AWS STS</text>
+<rect x="910" y="190" width="360" height="310" fill="#eef5fc" class="box"/>
+<text x="1090" y="245" text-anchor="middle" class="h">HTI-P5-ExternalGoogle</text><text x="1090" y="275" text-anchor="middle" class="h">FederationRole</text>
+<text x="1090" y="325" text-anchor="middle" class="b">Trust:</text><text x="1090" y="355" text-anchor="middle" class="b">sts:AssumeRoleWithWebIdentity</text>
+<text x="1090" y="385" text-anchor="middle" class="b">restricted Google subject</text><text x="1090" y="415" text-anchor="middle" class="b">restricted OAuth audience</text>
+<rect x="1380" y="220" width="170" height="250" fill="#f4f8f4" class="box"/>
+<text x="1465" y="285" text-anchor="middle" class="h">AWS</text><text x="1465" y="315" text-anchor="middle" class="h">Resources</text>
+<text x="1465" y="365" text-anchor="middle" class="b">S3</text><text x="1465" y="400" text-anchor="middle" class="b">scoped read</text><text x="1465" y="430" text-anchor="middle" class="b">permissions</text>
+<path d="M380 345 L500 345" class="arrow"/><text x="440" y="312" text-anchor="middle" class="small">OIDC token</text>
+<path d="M790 345 L910 345" class="arrow"/><text x="850" y="312" text-anchor="middle" class="small">AssumeRoleWithWebIdentity</text>
+<path d="M1270 345 L1380 345" class="arrow"/><text x="1325" y="312" text-anchor="middle" class="small">temporary STS session</text>
+<rect x="150" y="590" width="1300" height="230" fill="#f9fafc" stroke="#96a0aa" stroke-width="2" rx="20"/>
+<text x="185" y="630" class="h">Validation and audit</text>
+<text x="190" y="685" class="b">ALLOWED</text><text x="190" y="720" class="b">S3 prefix listing</text><text x="190" y="748" class="small">Scoped ListBucket</text>
+<text x="440" y="685" class="b">ALLOWED</text><text x="440" y="720" class="b">S3 GetObject</text><text x="440" y="748" class="small">Permitted test object</text>
+<text x="690" y="685" class="b">DENIED</text><text x="690" y="720" class="b">S3 PutObject</text><text x="690" y="748" class="small">Write not granted</text>
+<text x="940" y="685" class="b">DENIED</text><text x="940" y="720" class="b">S3 DeleteObject</text><text x="940" y="748" class="small">Delete not granted</text>
+<text x="1190" y="685" class="b">AUDITED</text><text x="1190" y="720" class="b">CloudTrail</text><text x="1190" y="748" class="small">AssumeRoleWithWebIdentity event</text>
+<text x="190" y="790" class="small">Key control: federation authentication does not grant broad AWS access; the dedicated role's trust and scoped permissions determine effective access.</text>
+</svg>
